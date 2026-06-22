@@ -10,9 +10,9 @@ const server = express();
 //Route Params = /curso/2
 //Request Body = { "name": "Nodejs", tipo: "Backend" }
 
-server.get('/curso', (req, res) => {
-
-    return res.json({ curso: 'Node.js' });
+server.get('/curso/:nome', (req, res) => {
+    const nome = req.params.nome
+    return res.json({ curso: `Aprendendo${nome}` });
 
 });
 
